@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "contactus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" ng-controller="contactusCtrl">
+    <h1 class="h1">CONTACT US</h1>
+    <div class="row featurette">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <h3 class="featurette-heading">Feel free to Email us with any question or inquiries. We would be happy to answer your questions.</h3>
+            <div class="col-md-6">
+                <div class="registrationform pd30">
+                    <div class="form-group">
+                        <div ng-show="errorMsg" ng-bind="errorMsg" class="alert alert-{{errorType}} form-control"></div>
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label>Your Name or Band Name</label>
+                        <input type="text" name="" class="form-control" id="name" ng-model="contactModel.name">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label>Your Email</label>
+                        <input type="text" name="" class="form-control" id="emailId" ng-model="contactModel.emailId">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Description</label>
+                        <textarea name="" class="form-control" id="description" ng-model="contactModel.description"></textarea>
+                    </div>
+
+
+                    <div class="clr10"></div>
+                    <div class="form-group col-lg-12">
+                        <button type="submit" class="btn btn-primary" ng-click="postContactUs()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clr50"></div>
+
+
+</div>
+@section Js{
+    <script src="~/Scripts/WebScripts/WebApp/contactus.js"></script>
+}

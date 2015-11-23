@@ -1,0 +1,14 @@
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\bin\Debug\UnSeenTalents.Database.dacpac
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\bin\Debug\UnSeenTalents.Database.dll
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\bin\Debug\UnSeenTalents.Database.pdb
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\obj\Debug\Model.xml
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\obj\Debug\refactor.xml
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\obj\Debug\postdeploy.sql
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\obj\Debug\predeploy.sql
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\obj\Debug\UnSeenTalents.Database.dll
+E:\Aakash\Samuel\UnSeenTalentApp\UnSeenTalents.Database\obj\Debug\UnSeenTalents.Database.pdb
+E:\Aakash\Samuel\New folder\UnSeenTalents.Database\bin\Debug\UnSeenTalents.Database.dacpac
+E:\Aakash\Samuel\New folder\UnSeenTalents.Database\bin\Debug\UnSeenTalents.Database.dll
+E:\Aakash\Samuel\New folder\UnSeenTalents.Database\bin\Debug\UnSeenTalents.Database.pdb
+E:\Aakash\Samuel\New folder\UnSeenTalents.Database\obj\Debug\UnSeenTalents.Database.dll
+E:\Aakash\Samuel\New folder\UnSeenTalents.Database\obj\Debug\UnSeenTalents.Database.pdb

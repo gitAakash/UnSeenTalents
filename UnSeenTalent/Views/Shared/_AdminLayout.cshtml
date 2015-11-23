@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+@{
+    var cUser = new UnseentalentsApp.Models.Repository.CurrentUser();
+}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+        <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="~/Assets/Admin/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/Assets/Admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/Assets/Admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <link href="~/Assets/Admin/css/plugins/timeline/timeline.css" rel="stylesheet" />
+        <link href="~/Assets/Admin/css/sb-admin.css" rel="stylesheet" />
+        <link href="~/Assets/Scripts/Js/ngTable/ng-table.css" rel="stylesheet" />
+        <link href="~/Assets/Admin/css/jquery-ui.css" rel="stylesheet" />
+        <link href="~/Content/AleartCss.css" rel="stylesheet" />
+        <link href="~/LoaderImg/loader.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.624/styles/kendo.common-material.min.css" />
+        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2015.2.624/styles/kendo.material.min.css" />
+
+        <script src="~/Scripts/DefaultJs/jquery-1.11.2.min.js"></script>
+        <script src="~/Scripts/Angular/jquery.cookie.js"></script>
+        <script src="~/Scripts/Angular/angular.js"></script>
+        <script src="~/Scripts/DefaultJs/bootstrap.js"></script>
+        <script src="~/Scripts/Angular/ui-bootstrap-tpls-0.10.0.js"></script>
+        <script src="~/Scripts/DefaultJs/jquery-ui.js"></script>
+        <script src="~/Scripts/DefaultJs/jquery-ui-timepicker-addon.js"></script>
+        <script src="https://kendo.cdn.telerik.com/2015.2.624/js/kendo.all.min.js"></script>
+        <script src="~/Scripts/Angular/ngTable/ng-table.js"></script>
+        <script src="~/Scripts/Angular/ngFramework.js"></script>
+        <script src="~/Scripts/WebScripts/LoginSetting.js"></script>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Unseen Talent :: Admin</a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            @*<li>
+            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+        </li>
+        <li class="divider"></li>
+    <li>
+        <a id="changepassword" href="@Url.Action("Changeadminpassword", "Admin")"><i class="fa fa-sign-out fa-fw"></i>Change Password</a>
+
+    </li>*@
+                            <li>
+                                <a id="logout" href="@Url.Action("logout", "admin")"> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="navbar-default navbar-static-side" role="navigation">
+                    <div class="sidebar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <div class="clearfix"></div>
+                            <li>
+                                <a href="@Url.Action("Dashboard", "Admin")"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("ManageEvents", "Admin")"><i class="fa fa-bar-chart-o fa-fw"></i> Manage Events</a>
+                            </li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="page-wrapper">
+                <div ng-app="myApp" style="padding-top: 25px;">
+                    <div class="alert-danger" id="logoutmsg" style="display: none; padding: 0px 15px 0px 46px;">
+                        <div class="alert">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Logout !</strong> You were successfully logged out of the system. Thank you!
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div id="loaderdiv" style="display: none">
+            <img src="@Url.Content("~/LoaderImg/page-loader.gif")" class="ajax-loader" style="width: 50px;" />
+        </div>
+    </body>
+</html>
+@RenderSection("Js", false)

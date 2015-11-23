@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "upcomingevents";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+}
+
+
+<div class="col-lg-9 col-md-9 col-sm-12" ng-controller="EventListCtrl">
+    <h1 class="h1">Events</h1>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-12 listing-block" ng-repeat="evt in eventList track by $index">
+        <div class="listcontainer">
+
+            <img class="eventimg" src="{{evt.eventImage}}" width="251" height="150" />
+            <h2><a href="@Url.Action("eventdetail", "WebApp")/{{evt.eventid}}/{{evt.urlKey}}" ng-bind="evt.eventtitle"></a></h2>
+            @*<p ng-bind="evt.eventdesc"></p>*@
+        </div>
+        <div class="datesection" ng-bind="evt.eventenddate">
+        </div>
+    </div>
+
+</div>
+
+@section Js{
+    <script src="~/Scripts/WebScripts/WebApp/eventlist.js"></script>
+}

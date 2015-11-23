@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "ManageEvents";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel panel-default" ng-controller="ManageeventCtrl">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-lg-4 pull-left">Manage Events</div>
+            <a href="#" data-toggle="modal" data-toggle="modal" data-target="#dataModelPoup" title="Add" class="AddDrop">
+                <button class="btn btn-primary pull-right" style="margin-right: 1%;"><i class="fa fa-plus"></i> Add Event</button>
+            </a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="">
+        </div>
+        @*<div class="approval">
+                <div id="gridApprovers" kendo-grid="gridApprovers" k-options="ApproverGrid" k-editable="true"></div>
+            </div>*@
+        <!-- Table starts here -->
+        <div class="form-group">
+            <div ng-show="errorMsg" ng-bind="errorMsg" class="alert alert-{{errorType}} form-control"></div>
+        </div>
+        <div class="table-responsive">
+            <table ng-table="tableParams" class="table table-bordered" style="margin-bottom: 0px">
+                <tr ng-repeat="d in $data track by $index">
+                    <td data-title="'Title'" style=" vertical-align: middle;">
+                        <span ng-bind="d.eventtitle"></span>
+                    </td>
+                    <td data-title="'Start Date'"  style=" vertical-align: middle;">
+                        <span ng-bind="d.eventstartdate"></span>
+                    </td>
+                    <td data-title="'End Date'" style=" vertical-align: middle;">
+                        <span ng-bind="d.eventenddate"></span>
+                    </td>
+                    <td data-title="'Image'" style=" vertical-align: middle;">
+                        <img ng-show="d.eventImage" class="img-thumbnail" width="70px" src="{{d.eventImage}}" />
+                    </td>
+                    <td data-title="'Action'" style="vertical-align: middle;">
+                        <a href="#" title="Edit" ng-click="UpdateEvents(d)" class="edit-icon label label-success"><i class="fa fa-edit"></i> Edit</a>
+                        <span style="cursor: pointer" class="label label-warning" ng-show="d.isactive" ng-click="ActiveInactiveDeleteEvents('Block',d)">InActive</span>
+                        <span style="cursor: pointer" class="label label-success" ng-hide="d.isactive" ng-click="ActiveInactiveDeleteEvents('Unblock',d)">Active</span>
+                        <span style="cursor: pointer" class="label label-danger" ng-click="ActiveInactiveDeleteEvents('Delete',d)">Delete</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="dataModelPoup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog LoginDailog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Event
+                    <button type="button" class="close PopClose" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only"></span></button>
+                </div>
+                <div class="modal-body LoginBody">
+                    <div class="LoginPopContent">
+                        <fieldset>
+                            <form role="form" name="signUpForm" novalidate class="form-horizontal">
+                                <div class="form-group" ng-class="{ 'has-error' : signUpForm.eventtitle.$invalid && !signUpForm.eventtitle.$pristine }">
+                                    <input id="txtTitle" type="text" class="form-control input-sm" name="Title" ng-model="event.eventtitle" placeholder="Event Title" required=required ng-required="true" />
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error' : signUpForm.eventtitle.$invalid && !signUpForm.eventtitle.$pristine }">
+                                    <input id="txtStartDate" type="text" class="form-control input-sm" name="Title" ng-model="event.eventstartdate" placeholder="Start Date" required=required ng-required="true" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" id="MultipleFilesUpload" class="fileOption" accept="image/*" name="file" onchange="angular.element(this).scope().uploadFile(this.files)" />
+                                    <span class="dimension">(Dimension 420px * 420px)</span>
+                                    <input type="hidden" ng-model="event.eventImage" />
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error' : signUpForm.eventtitle.$invalid && !signUpForm.eventtitle.$pristine }">
+                                    <textarea  class="form-control input-sm" placeholder="Description" style="min-height:100px; max-height:100px" ng-model="event.eventdesc"></textarea>
+                                </div>
+                            </form>
+                            <button class="btn btn-primary " ng-click="saveData(event)">Save</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="resetValues()">Cancel</button>
+                        </fieldset>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Js{
+    <script src="~/Scripts/WebScripts/ManageEventNew.js"></script>
+}
+

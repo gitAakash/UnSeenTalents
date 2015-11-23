@@ -1,0 +1,38 @@
+﻿#loaderdiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1051;
+    background: url(bg_light.png) repeat;
+    opacity: .8;
+}
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px; /* -1 * image height / 2 */
+    display: block;
+}
+
+.k-loading-mask{
+    position: fixed; 
+    top: 0;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    z-index: 1051;
+    background: url(bg_light.png) repeat;
+    opacity: .8;
+    
+  
+}
+
+.k-loading-image {
+   
+     background-image: url('/LoaderImg/page-loader.gif') !important;  background-size: 50px;
+    
+}

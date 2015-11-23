@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+@{
+    var cUser = new UnseentalentsApp.Models.Repository.CurrentUser();
+    var objmethod = new UnseentalentsApp.Models.Repository.UnseenTalentsMethod();
+    UnseentalentsApp.Models.Repository.Tokenresponse objtoken = objmethod.GetUserToken(Convert.ToInt64(cUser.userid));
+}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Assets/Admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/css/plugins/timeline/timeline.css" rel="stylesheet" />
+    <link href="~/Assets/Scripts/Js/ngTable/ng-table.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/css/jquery-ui.css" rel="stylesheet" />
+
+
+    <link href="~/Content/AleartCss.css" rel="stylesheet" />
+
+    <link href="~/LoaderImg/loader.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.2.624/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2015.2.624/styles/kendo.material.min.css" />
+    <script src="~/Scripts/DefaultJs/jquery-1.11.2.min.js"></script>
+
+    <script src="~/Scripts/Angular/jquery.cookie.js"></script>
+    <script src="~/Scripts/Angular/angular.js"></script>
+    <script src="~/Scripts/DefaultJs/bootstrap.js"></script>
+    <script src="~/Scripts/Angular/ui-bootstrap-tpls-0.10.0.js"></script>
+
+    <script src="~/Scripts/DefaultJs/jquery-ui.js"></script>
+    <script src="~/Scripts/DefaultJs/jquery-ui-timepicker-addon.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2015.2.624/js/kendo.all.min.js"></script>
+    <script src="~/Scripts/Angular/ngTable/ng-table.js"></script>
+    <script src="~/Scripts/Angular/ngFramework.js"></script>
+    <script src="~/Scripts/WebScripts/WebApp/commonLayout.js"></script>
+    <script src="@Url.Content("~/Scripts/DefaultJs/jquery-1.11.2.min.js")"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Candal|Raleway:500,600,400' rel='stylesheet' type='text/css'>
+    <script src="@Url.Content("~/Assets/Web/js/move-top.js")"></script>
+    <script src="@Url.Content("~/Assets/Web/js/easing.js")"></script>
+
+    <!--/script-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 230) {
+                $('.header-top').addClass('fixed-header');
+            }
+            else {
+                $('.header-top').removeClass('fixed-header');
+            }
+        });
+    </script>
+
+</head>
+<body ng-app="myApp">
+    <input type="hidden" value="@cUser.userid" id="hdnUserId" />
+    <div class="header-top">
+        <div class="container">
+            <!--top-nav-->
+            <span class="menu"> </span>
+            <div class="top-menu">
+                <div class="col-lg-3 col-md-3 logo-o">
+                    <a href="@Url.Action("Index", "Webapp")">
+                              <img src="@Url.Content("~/images/logo.png")" />
+                    </a> 
+                </div>
+                <div class="col-lg-9 col-md-9 menu-o">
+                    <nav>
+                        <ul class="cl-effect-16">
+                            <li><a class="active" href="@Url.Action("Index", "Webapp")" data-hover="Home">Home</a></li>
+                            <li><a class="" href="@Url.Action("HowToApply", "Webapp")" data-hover="How To apply">How To apply</a></li>
+                            @*<li><a class="scroll" href="#" data-hover="Contest Registration">Contest Registration</a></li>
+                                <li><a class="scroll" href="#" data-hover="Register to vote here">Register to vote here</a></li>*@
+                            <li><a class="" href="@Url.Action("UpcomingEvents", "Webapp")">Events</a></li>
+                            <li><a class="" href="@Url.Action("ContactUs", "Webapp")" data-hover="Contact">Contact</a></li>
+                            <li><a class="" href="@Url.Action("AboutUs", "Webapp")" data-hover="Contact">AboutUs</a></li>
+                           
+                            @if (cUser.userid != 0)
+                            { <li><a class="" href="@Url.Action("UploadTalent", "Webapp")" data-hover="Contact">Upload Talent</a></li>
+                                <li class="pull-right">
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-user fa-fw"></i> @cUser.FirstName <i class="arrow glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                    <a id="logout" href="@Url.Action("Logout", "Webapp")"> Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="dropdown pull-right">
+                                    <a href="@Url.Action("Login", "Webapp")"><span>Login</span></a>
+                                </li>
+                            }
+                            <div class="clearfix"></div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+           
+            <!-- script-for-menu -->
+            <script>
+                $("span.menu").click(function () {
+                    $(".top-menu ul").slideToggle("slow", function () {
+                    });
+                });
+            </script>
+            <!-- script-for-menu -->
+
+            <div class="clearfix"></div>
+            <!-- script-for-menu -->
+        </div>
+    </div>
+    <!--banner-->
+    <div class="breadcrumb-new">
+        <div class="container">
+            <ul>
+                <li>
+                    @Html.ActionLink("Home", "Index", "Webapp")
+                </li>
+                @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+                {
+                    <li>
+                        @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+                    </li>
+                }
+
+                @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+                {
+                    <li>
+                        @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+                    </li>
+                }
+            </ul>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="col-lg-3 col-md-3 col-sm-12 profilesection">
+            @if (cUser.userid != 0)
+            {
+                <div class="user">
+                    <img src="@cUser.ProfilePic" />
+                    @*<a href="#" class="edit">Edit</a>*@
+                </div>
+                <div class="name"><span>Welcome : &nbsp;</span> @cUser.FirstName</div>
+                 <ul class="menulist">
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Dashboard</a></li>
+                <li><a href="@Url.Action("Payment", "Webapp")"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Available Token</a></li>
+               
+            </ul>
+                @*<div class="process">
+                        <p>Profile Status - 70% Completed  </p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                 aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                <span class="sr-only">70% Complete</span>
+                            </div>
+                        </div>
+                    </div>*@
+            }
+            else
+            {
+                <div class="user">
+                    <p>
+                        There are more to find out inside
+                        Please login to see all the events
+                        and be updated...
+                    </p>
+                    <a href="@Url.Action("Login", "Webapp")" class="login">&nbsp;</a>
+                </div>
+            }
+           
+        </div>
+        @RenderBody()
+        <div class="clr50"></div>
+
+    </div>
+    <!--footer-->
+    <div class="newsletter">
+        <div class="newsletter">
+            <div class="container" ng-controller="commonLayoutCtrl">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <p>
+                        Enter Your Email for Updates on Each Event!
+                    </p>
+                </div>
+                <form>
+                    <div class="col-lg-4 col-md-3 col-sm-12">
+
+                        <input type="text" id="subsemail" class="" placeholder="Email address" ng-model="email" ng-enter required >
+
+                        <input name="" type="button" class="btn" value="Submit" ng-enter ng-click="subscribeNewsLetter()">
+
+                    </div>
+                </form>
+                <div class="col-lg-5 col-md-3 col-sm-12 ship">
+                    <p>Signup to vote</p>
+                    <hr>
+                    <p>  Secured Checkout</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="footernew" id="footer">
+        <div class="container">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <ul>
+                    <span>Unseen talent</span>
+                    <li><a href="@Url.Action("Index", "Webapp")" data-hover="Home">Home</a></li>
+                    <li><a class="" href="@Url.Action("HowToApply", "Webapp")" data-hover="How To apply">Enter Contest</a></li>
+
+                    <li><a class="" href="@Url.Action("ContactUs", "Webapp")" data-hover="Contact">Contact</a></li>
+                    <li><a class="" href="@Url.Action("AboutUs", "Webapp")" data-hover="Contact">AboutUs</a></li>
+                </ul>
+            </div>
+         
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <ul>
+                    <span>About Us</span>
+
+                </ul>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <ul>
+                    <span>Follow us on</span>
+                    <li><a href="#"><img src="@Url.Content("~/images/fb.png")" /></a> <a href="#"><img src="@Url.Content("~/images/tw.png")" /></a> <a href="#"><img src="@Url.Content("~/images/g.png")" /></a> <a href="#"><img src="@Url.Content("~/images/pin.png")" /></a></li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+
+        <div class="container">
+            <div class="col-lg-6 col-sm-12 text-left"><a href="#">Privacy Policy</a>&nbsp;&nbsp;  |&nbsp;&nbsp; <a href="#"> Terms & Conditions</a></div>
+            <div class="col-lg-6 col-sm-12 text-right">Copyright 2015 All Rights Reserved</div>
+        </div>
+    </div>
+    <!--start-smoth-scrolling-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <div id="loaderdiv" style="display: none">
+        <img src="@Url.Content("~/LoaderImg/page-loader.gif")" class="ajax-loader" style="width:50px;" />
+    </div>
+</body>
+</html>
+@RenderSection("Js", false)

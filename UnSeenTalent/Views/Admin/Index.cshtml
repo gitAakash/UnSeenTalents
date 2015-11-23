@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+      
+    <link href="~/Assets/Admin/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Assets/Admin/css/style.css" rel="stylesheet" />
+
+    <link href="~/Content/AleartCss.css" rel="stylesheet" />
+
+    <link href="~/LoaderImg/loader.css" rel="stylesheet" />
+    <script src="~/Scripts/DefaultJs/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/Angular/jquery.cookie.js"></script>
+    <script src="~/Scripts/Angular/angular.js"></script>
+    <script src="http://cdn.kendostatic.com/2015.1.408/js/kendo.all.min.js"></script>
+    <script src="~/Scripts/Angular/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="~/Scripts/Angular/ngTable/ng-table.js"></script>
+    <script src="~/Scripts/Angular/ngFramework.js"></script>
+    <script src="~/Scripts/WebScripts/LoginSetting.js"></script>
+
+
+</head>
+<body>
+
+    <!-- Static navbar -->
+    @*<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#">PASDEJ</a>
+            </div>
+                </nav>*@
+
+
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo" href="#"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="navbar-right">
+                    <li class=""><a href="#">@*Sign Out*@</a></li>
+
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+
+
+
+    <div class="container-fluid" ng-controller="LoginCtrl" id="center">
+        <div id="loaderdiv" style="display: none">
+            <img src="@Url.Content("~/LoaderImg/page-loader.gif")" class="ajax-loader" style="width:50px;" />
+        </div>
+
+
+        <div class="row">
+            <div class="login">
+                <div class="form-login">
+                    <h4 class="pasdejTitle">Admin</h4>
+                    <form class="form center-block">
+                        <div class="form-group">
+                            <div ng-show="errorMsg" ng-bind="errorMsg" class="alert alert-{{errorType}} form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="email" class="form-control input-sm chat-input" placeholder="Email address" ng-model="modelLogin.username" ng-enter required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="pwd" class="form-control input-sm chat-input" placeholder="Password" ng-model="modelLogin.password" ng-enter required>
+
+                        </div>
+
+                        @*<div class="form-group">
+                            <div class="checkbox checked">
+                                <input type="checkbox" id="Option" ng-model="modelLogin.rememberme">
+                                <label for="Option" class="remember"> Remember me</label>
+
+                            </div>
+                        </div>*@
+                        <div class="form-group">
+                            <div class="wrapper">
+                                <span class="group-btn">
+                                    <a href="#" class="btn btn-primary btn-md" ng-enter ng-click="loginClickfunc(modelLogin)">Login <i class="fa fa-sign-in"></i></a>
+                                </span>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

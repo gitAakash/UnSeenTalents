@@ -1,0 +1,21 @@
+﻿<a href="" style="cursor: pointer;" ng-click="bindvalue('{{match.model.id}}')">
+    <div class="row">
+        <!--<div class="col-lg-3"><img src="{{match.model.ImageUrl}}" class="img img-thumbnail" height="50" width="50" style="height: 45px; width: 50px;" /></div>-->
+        <div class="col-lg-9">
+            <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+            <!--<p><small>{{match.model.value}}</small> </p>-->
+        </div>
+    </div>
+</a>
+
+<style type="text/css">
+    .dropdown-menu > li > span {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: #333;
+        white-space: nowrap;
+    }
+</style>

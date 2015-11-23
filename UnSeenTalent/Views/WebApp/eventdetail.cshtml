@@ -1,0 +1,142 @@
+﻿@using UnseentalentsApp.Models.Repository
+@{
+    ViewBag.Title = "eventdetail";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
+    var cUser = new CurrentUser();
+    var objmethod = new UnseenTalentsMethod();
+    Tokenresponse objtoken = objmethod.GetUserToken(Convert.ToInt64(cUser.userid));
+}
+<div ng-controller="EventDetailCtrl">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <h1 class="h1">@ViewContext.RouteData.Values["title"]</h1>
+        <input type="hidden" value="@ViewContext.RouteData.Values["id"]" id="hdnEventId" />
+       
+        <div class="evnt-update" ng-if="isUploading=='1'">
+           @* <input name="" type="text" id="txtEventPost"/>*@
+            <div class="clr10"></div>
+           @if (cUser.userid == 0)
+            {
+                <a href="@Url.Action("Login", "Webapp")">
+                    <input name="" type="button" value="Please login to post" />
+                </a>
+            }
+            else if (objtoken.Totaltoken == 0)
+            {
+                <a href="@Url.Action("Payment", "WebApp")">Please purchase token for uploading</a>
+            }
+            else
+            {
+               @* <input name="" type="button" value="Submit" ng-click="SavePost()"/>*@
+                <a href="@Url.Action("UploadTalent", "WebApp")">
+                    <input name="" type="button" value="Upload Video to this event" />
+                </a>
+            }
+
+        </div>
+        <div class="clr20"></div>
+        <div class="usercomment">
+            <div class="picsection" ng-repeat="post in eveeventPostsntList track by $index">
+                <div class="eventbanner embed-responsive embed-responsive-4by3">
+                    <video controls="controls" class="videoCss embed-responsive-item" ng-if="post.video!=''">
+                        <source src="{{ParseVideoUrl(post.video)}}" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="clr20"></div>
+                <img src="{{post.profilePic}}" width="53" height="48" />
+                <p>
+                    <span ng-bind="post.userName"></span>
+                    <br>
+                    Posted an update (1 hr ago)
+                </p>
+                <div class="clr"></div>
+                <div class="post">
+
+                    <p ng-bind="post.videoDescription"></p>
+                    <div class="clr"></div>
+                    <ul class="commentlink" ng-if="isUploading=='0'">
+                        <li id="comment" ng-click="ToggleComment($index,post)"><span>({{post.commentCount}})</span> comment</li>
+                        @if (cUser.userid == 0)
+                        {
+                            <li>{{post.voteCount}}</li>
+                        }
+                        else
+                        {
+                            <li ng-class="{'active':post.isVote=='True'}" ng-click="postVote($index,post)">{{post.voteCount}}</li>
+                        }
+
+                        <li><a href="#">&nbsp;</a></li>
+                    </ul>
+                    <div class="clr"></div>
+                    <div class="commentbox" id="divcommentbox_{{post.videoId}}">
+                        <textarea id="txtCommentTextArea_{{post.videoId}}"></textarea>
+                        <div class="clr10"></div>
+                        @if (cUser.userid == 0)
+                        {
+                            <a href="@(Url.Action("Login","WebApp"))">
+                                <input name="" type="button" value="Please login to comment and vote" />
+                            </a>
+                        }
+                        else
+                        {
+                            <input type="button" value="Submit" name="" ng-click="AddPostComment(post,$index)" />
+                        }
+
+                        <div class="clr10"></div>
+                        <div style="clear: both; margin-bottom: 20px" ng-repeat="comm in post.postComments">
+                            <img src="{{comm.profilePic}}" width="53" height="48" />
+                            <p>
+                                <span ng-bind="comm.userName"></span>
+                            </p>
+                            <p ng-bind="comm.commentText"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-lg-3 col-md-3 col-sm-12">
+        <h2 class="h2">
+            Recent Events
+        </h2>
+        <ul class="listing">
+            <li ng-repeat="recentEvent in recentevents track by $index">
+                <a href="@Url.Action("eventdetail", "WebApp", new {id = "", title = ""})/{{recentEvent.eventId}}/{{recentEvent.urlKey}}" ng-bind="recentEvent.eventTitle"></a>
+            </li>
+        </ul>
+        <div class="ads">
+            <img src="@Url.Content("~/images/ads.jpg")" />
+        </div>
+        <h2 class="h2">
+            Recent Video
+        </h2>
+        <div class="recent-video">
+
+            <iframe width="100%" height="150" src="https://www.youtube.com/embed/DX1xAY_okcw" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+@section Js{
+    <script src="~/Scripts/WebScripts/WebApp/eventdetail.js"></script>
+
+    <script type="text/javascript">
+
+        function ToggleComment() {
+            //$(this).find('.updates_mainContainer:first-child').slideToggle('slow');
+            $(".updates_mainContainer").slideToggle('slow');
+        }
+
+    </script>
+}
+<style type="text/css">
+    .videoCss {
+        height: 100%;
+        width: 100%;
+    }
+</style>

@@ -1,0 +1,536 @@
+
+/** Common Style Started Here **/
+
+body {
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    font-family: arial;font-size:12px;/*font-size:12pt;*/
+}
+.fileInput 												{position:absolute !important;left:-77px !important;top:42px !important;display:none !important;}
+.k-widget {
+margin-bottom:7px !important;}
+
+
+
+h3{font-size:25px;/*font-size:25pt;*/}
+/** Common Style Ended Here **/
+
+/*/** Header Style Started Here **/
+/*.navbar-inverse {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+}
+
+.logo {
+    padding: 15px 0;
+}*/
+/** Header Style Ended Here **/
+
+
+/** Header Style Started Here **/
+
+.logo 															{padding:15px 0;background:url('../Images/Invoices/logo.PNG')no-repeat;width:88px;height:0;}
+.navbar															{border-bottom:2px solid #273A60;background-color: #DDDDDD;  height: 54px;}
+.navbar-inverse 													{background-color: #e0e0e0;border-color: #e0e0e0;}
+.navbar-right li a													{color:#273A60;font-family:arial;font-size:12px;/*font-size:12pt;*/}
+.navbar-header 													{margin-top:12px;}
+.nav 															{padding-left: 88px;}
+.nav > li															{border-left:1px solid #999999;}
+.nav > li:last-child												{border-right:1px solid #999999;}
+.navbar-default .navbar-nav > li > a 								{color:#27395e;font-size:14px;/*font-size:14pt;*/}
+.navbar-default .navbar-nav > .open > a, 
+	.navbar-default .navbar-nav > .open > a:hover,  
+	.navbar-default .navbar-nav > .open > a:focus 				{background-color: #273A60 !important;color: #fff !important;}
+.navbar-default .navbar-nav > li > a:hover 							{background-color: #cccccc !important;color: #273A60;}
+.navbar-default .navbar-nav > .active > a,
+	.navbar-default .navbar-nav > .active > a:hover,
+	.navbar-default .navbar-nav > .active > a:focus 				{color: #273A60;background-color:#cccccc;}
+.navbar-right li 													{list-style:none;margin-top: 16px;text-decoration: underline;}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus 		{background-color: #dbdbdb;color: #262626;}
+	
+
+/** Header Style Ended Here **/
+
+
+/** Login Content Style Started Here **/
+.login {
+    margin: 65px auto;
+    width: 365px;
+}
+
+.form-login {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 33px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border: 1px solid #999999;
+}
+
+.pasdejTitle 													{border:0 solid #999;border-bottom-width:1px;padding-bottom:10px;padding-top:36px;color:#999;}
+
+.form-control {
+    border-radius: 4px;
+    border-color: #999;
+    color: #666;
+    margin: 0 auto;
+    width: 91%;
+}
+
+.wrapper {
+    text-align: right;
+}
+
+.form-group {
+    margin-bottom: 7px;
+}
+
+label {
+    color: #999;
+    font-size: 12px;
+}
+
+.btn-primary {
+    background-color: #3a598c;
+    border-color: #273a60;
+    padding: 6px 30px;
+}
+
+.checked {
+    border-bottom: 1px solid #999999;
+    padding-bottom: 10px;
+    padding-top: 6px;
+}
+
+    .checked label {
+        padding-left: 15px;
+    }
+input[type="checkbox"] { display:none;
+}
+
+.remember {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 10px;
+    line-height: 18px;
+}
+
+    .remember:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-top: -9px;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 1px solid #000;
+        color: #f3f3f3;
+        text-align: center;
+    }
+
+  .checked input[type=checkbox]:checked + .remember:before {
+content: "\2713";
+color:#000;
+font-size: 15px;
+}
+
+
+
+
+
+.nav {
+    padding-left: 88px;
+}
+
+    .nav > li {
+        border-left: 1px solid #999999;
+    }
+
+        .nav > li:last-child {
+            border-right: 1px solid #999999;
+        }
+
+.navbar-default .navbar-nav > li > a {
+    color: #273A60;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #273A60 !important;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: #E7E7E7 !important;
+    color: #273A60;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #273A60;
+}
+
+.navbar-right li {
+    list-style: none;
+     margin-right: 5px;
+  margin-top: 19px;font-size: 12px;color:#273a60 !important;
+    text-decoration: underline;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #ccc;
+    color: #262626;
+}
+
+.navbar {
+    border-bottom: 3px solid #273A60;
+}
+
+.error {
+    border: 1px solid #d80000;
+    font-size: 12px;
+    color: #d80000;
+    background-color: #f7cccc;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+/** Login Content Style Ended Here **/
+
+
+/** Invoice Page Style Started Here **/
+.matchesInvoice {margin-left:-40px;  margin-top: 14px;}
+.matchesInvoice li{list-style:none;display:inline-block; padding: 0 3px 0 0;}
+.matchesInvoice li a { text-decoration:none;}
+.matchesInvoice li.last {border:none;color:#27395e;}
+.matchesInvoice li a.saved {color:#273a60 !important;font-weight:bold;}
+.numberRows 		{min-width:105px;}
+.dropdown-menu {border-radius:0;box-shadow:none;margin:0; min-width: 93px;}
+.invoice_btn 	{border-radius:0;padding: 3px 11px;font-size: 12px;}
+.invoice_rows {padding: 3px 24px;}
+.right {   margin-top: -16px;}
+   
+   .right li .k-widget {width:160px !important;}
+ .right li:nth-child(2) .k-widget {width:123px !important;}
+.view	{ margin: 0 0 3px;}
+.invoiceContainer h3{color:#666;  margin-top: 4px;
+  margin-bottom: 0px;}
+.btn-default {background-color: #dbdbdb;padding:6px 30px;}
+
+.invoice thead .k-state-active a {   color: #273a60 !important;font-weight:bold;}
+.invoice .k-grid-filter.k-state-active {background:none !important;}
+.invoice  #divGrid                                                                                                                                                                                                    {  border: 1px solid #b3b3b3;border-radius:5px;}
+.invoice                                                                                                                                                                                                                                {}
+.invoice .k-grid-header                                                                                                                                                                  {border-color:#b3b3b3;background-color: #F2F2F2;}
+.invoice .dropdown-toggle                                                                                                                                                          {background-color:#e6e6e6;}
+.invoice  .btn-default.dropdown-toggle:hover                                                                                   {background-color:#e6e6e6 !important;}
+.invoice .btn-default.invoice_btn:hover                                                                                                                {background-color:#fff;}
+.caret                                                                                                                                                                                                                                    {border-left: 6px solid rgba(0, 0, 0, 0);border-right: 6px solid rgba(0, 0, 0, 0);border-top: 7px dashed;}
+.invoice .k-grouping-header                                                                                                                                                        {background-color:#F2F2F2; color: #666666;line-height: 1;padding-left: 0.286em; border-color: #B3B3B3;border-radius: 5px 5px 0 0;}           
+.invoice .k-header                                                                                                                                                                                           {width:85px;} 
+.invoice .k-grid-content tr td                                                                                                                                                       {border-right-width: 0;}
+.invoice .k-grid tr td                                                                                                                                                                                         { border-bottom-width: 0; border-color: #B3B3B3; text-align: left !important;}
+.invoice .k-header                                                                                                                                                                                           {background-color:#F2F2F2; border-color: #999;}
+.invoice .k-grid-content                                                                                                                                                                 {height:348px !important;}  
+.invoice .selected                                                                                                                                                                                             {border:1px solid #ff6600;}/*column selected */
+.invoice .k-header .k-link                                                                                                                                                              { margin-top: 4px !important;padding: 0 !important;color:#666666;margin-left: 2px !important;}
+.invoice .k-filter                                                                                                                                                                                {width:17px;margin-left: 12px;margin-top: -1px;}
+.invoice .k-grid-filter                                                                                                                                                                       {width: 17px;}
+.invoice .k-grid td                                                                                                                                                                                             { padding: 0px 7px;}
+.invoice  .k-grid td:first-child                                                                                                                                        {width:101px;}
+.invoice  .k-grid tr:nth-child(even)                                                                                                                            {background-color: #F2F2F2;}
+.invoice .k-textbox                                                                                                                                                                                          {border:1px solid #999;border-radius:3px;}
+.invoice .k-group-indicator                                                                                                                                                           {background-color: #F2F2F2;border-color: #b3b3b3; color: #666666;}
+.invoice .k-group-indicator a                                                                                                                                       {color:#666 !important;}
+.invoice .k-group-indicator .k-link                                                                                                                             { margin-left: -6px;margin-right: 2px;}
+.invoice .k-button-bare                                                                                                                                                                                 {float:left;margin-top:1px;}
+.invoice .k-si-arrow-n                                                                                                                                                                     {display:none;}
+.invoice .k-group-delete                                                                                                                                                                               { background-position: -164px -80px;}
+.invoice .k-grouping-row td                                                                                                                                                         {background-color:#b1c9e3;border-bottom:2px solid #273A60 !important;line-height:0;padding:7px;}
+.invoice .k-reset .k-i-collapse                                                                                                                                      {  background-position: 4px -144px;transform: rotate(34deg);}
+.invoice .k-reset .k-i-expand                                                                                                                                       { background-position: 0 -142px;}
+
+.invoice .k-pager-numbers										{margin-left:-25px;}
+.invoice .k-pager-numbers li span.k-link 							{height: 18px;
+      line-height: 15px !important;
+    width: 60px !important;margin-left: -5px !important; }
+.invoice .k-pager-wrap a:nth-child(2){margin-left:-2px !important;}
+.invoice .k-pager-wrap .k-pager-last{margin-left:-2px !important;}
+.invoice .k-pager-wrap 											{background-color:#F2F2F2;border-color: #B3B3B3;border-radius: 0 0 5px 5px;padding:5px 5px;line-height:0; border-width: 1px 0;}
+.invoice  .k-pager-numbers .k-link,
+	.invoice  .k-pager-numbers .k-link:hover
+				{border-radius: 0;border:1px solid #b3b3b3 !important;  margin: 0 !important; background-color: #FFFFFF !important;}      
+.invoice .k-pager-numbers .k-state-selected						{background-color:#999999;color:#fff; margin: -1px;}    
+ .invoice .k-pager-wrap > a.k-link 									{border-radius: 0;border:1px solid #b3b3b3 !important;background-color: #FFFFFF;min-width: 1.429em;height: 1.429em;line-height: 1.3;}
+
+
+
+.invoice .k-pager-refresh                                                                                                                                                              {display:none;}
+
+.invoice .k-icon.k-filter 										{background: url("../images/Invoices/filter.png") no-repeat;opacity:1;}
+.removeBorder {border:none !important;background:none !important;}
+.invoice .k-grid tr:nth-child(odd) td .info a			{background:url('../images/Invoices/info1.png') no-repeat;width: 15px;cursor:pointer;height:35px;float:left;margin-left:-7px;}
+.invoice  .k-grid tr:nth-child(even) td .info a				{background:url('../images/Invoices/info2.png') no-repeat;width: 16px;cursor:pointer;height:30px !important;float:left;margin-left:-7px;}
+
+/*
+.invoice .k-grid tr:nth-child(odd) td .info a .lightInfo {
+display:none;}
+.invoice .k-grid tr:nth-child(even) td .info a .drakInfo {
+display:none;}
+.invoice .k-grid tr:nth-child(odd) td:first-child .icons ul li:nth-child(2) 			{margin-left:2px;}*/
+
+/**Hover for info icon **/
+.k-widget.k-tooltip												{background:none !important;border:none !important; margin-left: -9px;box-shadow:none !important;margin-top:-39px;}
+.k-callout-w												{left:0 !important;border-right:none !important;}
+ .k-callout-e 													{left:0 !important;border:none !important;}
+  .k-callout-n 													{border:none !important;}
+#infoHover														{cursor:pointer;}
+/**Hover for info icon **/
+
+
+
+.importBtn {height:32px;line-height: 0.429;border-radius: 5px;}
+
+.k-dropdown .k-state-default, .k-dropdown, span.k-colorpicker {background:none !important;border-color:#999 !important; 
+  height: 28px;  border-radius: 5px 0 0 5px;}
+.k-dropdown .k-input{line-height:1.7;}
+.k-state-default > .k-select {background-color:#f0f0f0;min-height:28px !important;line-height:1.7;}
+.k-state-hover > .k-select {background-color:#f0f0f0;}
+.k-textbox { border-color: #999 !important;border-radius:5px !important;}
+.k-primary {background-color: #3a598c !important;border-color: #273a60 !important;border-radius:3px !important;text-transform:lowercase !important;color:#fff !important;  padding: 2px !important;width: 64px !important;margin-right:0 !important;}
+.k-filter-menu .k-button {background-color: #ddd; border-color: #999 !important;border-radius:3px !important;text-transform:capitalize !important;color:#666;  padding: 2px !important;width: 64px !important;float: right;margin-left: 5px !important;}
+.icons ul{display: inline; margin-left: -47px;}
+.icons ul li {list-style:none;display:inline;}
+.info {cursor:pointer;}
+.info img{ }
+.delete{padding: 2px 9px;cursor:pointer;}
+.matched{padding: 2px 0px;cursor:pointer;}
+.invoice .k-grid tr:nth-child(odd) td .delete img{   margin-top: 4px;}
+.invoice .k-grid tr:nth-child(odd) td .matched img{  margin-top: 4px;}
+.invoice .k-grid tr:nth-child(even) td .delete img{   margin-top: 1px;}
+.invoice .k-grid tr:nth-child(even) td .matched img{  margin-top:1px;}
+/*
+.hover {
+margin-left:12px;position:absolute;}*/
+/** Invoice Page Style Ended Here **/
+
+
+/** Invoice Details Page Style Started Here **/
+
+.invoiceDetails  .pull-right { margin-top: 33px;}
+.leftArrow	{background: url("../Images/Invoices/link.png") no-repeat; width:37px;height:38px;background-size:70%;  margin-right: -10px;}
+.comments {margin-top:10px;}
+.comments  textarea{border: 1px solid #b3b3b3;padding: 6px;width:100%;height:130px;}
+.updateBtn {float:right;margin-top: 7px;}
+.commentsLogs {margin-top:10px;}
+.commentsLogs h3{margin-bottom:45px;}
+.logsDetails {background-color:#9999D6; width: 100%; height: 82px;margin-bottom: 12px;padding: 12px;}
+.logsDetails ul{margin-left: 11px;padding: 17px 0;}
+.logsDetails ul li {list-style:none;display:inline; margin-right: 28px;}
+.logsDetails p{ float: left;margin-left: 11px;margin-top: -18px;}
+
+.logsDetailsforAdm {background-color:#ffe9db; width: 100%; height: 82px;margin-bottom: 12px;padding: 12px;}
+.logsDetailsforAdm ul{margin-left: 11px;padding: 17px 0;}
+.logsDetailsforAdm ul li {list-style:none;display:inline; margin-right: 28px;}
+.logsDetailsforAdm p{ float: left;margin-left: 11px;margin-top: -18px;}
+
+.details {border:1px solid #b3b3b3; border-radius: 5px;margin-top: 25px;}
+.head{background-color:#f0f0f0; padding: 16px; border-bottom: 1px solid #b3b3b3;border-radius: 5px 5px 0 0;}
+.content{}
+.foot{background-color:#f0f0f0; padding: 16px;border-top: 1px solid #b3b3b3;border-radius: 0 0 5px 5px;}
+.tableLeft {border-right:1px solid #b3b3b3;}
+.tableRight{border-left:1px solid #b3b3b3;}
+.content .table {margin-bottom: 0px;}
+.content .table-striped > tbody > tr:nth-of-type(2n+1) {background: none;}
+.content .table-striped > tbody > tr:nth-of-type(2n+2) {background-color: #f0f0f0;}
+.content .table tr td {border-top:none;}
+
+
+/** Invoice Details Page Style Ended Here **/
+.displaynone{  visibility: hidden;}
+.displayblock{ visibility: visible;}
+
+/** Approval Page Style Started Here **/
+.approval thead .k-state-active a {   color: #273a60 !important;font-weight:bold;}
+.approval .k-grid-filter.k-state-active {background:none !important;}
+.approval  #grid 													{border-color:#b3b3b3;border-radius:5px;}
+.approval_icons													{margin:0 auto;width:97%;}
+.approval .k-grid-header											{border-color:#b3b3b3;}
+.approval .dropdown-toggle 										{background-color:#e6e6e6;}
+.approval  .btn-default.dropdown-toggle:hover 					{background-color:#e6e6e6 !important;}
+.approval .btn-default.invoice_btn:hover 						{background-color:#fff;}
+.caret 															{border-left: 6px solid rgba(0, 0, 0, 0);border-right: 6px solid rgba(0, 0, 0, 0);border-top: 7px dashed;}
+.approval .k-grouping-header 									{background-color:#f0f0f0; color: #666666;line-height: 1;padding-left: 0.286em; border-color: #B3B3B3;border-radius: 5px 5px 0 0;}
+.approval .k-grid-content tr td 									{border-right-width: 0;}
+.approval .k-grid tr td 											{border-bottom-width: 0; border-color: #B3B3B3;}
+.approval .k-header												{background-color:#f0f0f0; border-color: #B3B3B3;}
+.approval .k-header .k-link										{padding:0 !important;margin-top:4px !important;color:#666666;margin-left: 2px !important;line-height:20px;}
+.approval .k-filter												{width:17px;margin-right: 12px;margin-top: -1px;}
+.approval .k-grid-filter 										{width: 14px;}
+.approval .k-grid td 												{padding: 6px 7px;}
+.approval .k-grid td:first-child									{padding: 6px 29px;}
+.approval  .k-grid tr:nth-child(even)    							{background-color:#f0f0f0; }
+.approval .k-textbox												{border:1px solid #999;border-radius:3px;}
+.approval .k-group-indicator 									{background-color: #f0f0f0;border-color: #b3b3b3; color: #666666;}
+.approval .k-group-indicator a									{color:#666;}
+.approval .k-group-indicator .k-link 								{margin-left: -6px;margin-right: 2px;}
+.approval .k-button-bare 										{float:left;margin-top:1px;}
+.approval .k-si-arrow-n 											{display:none;}
+.approval .k-group-delete										{background-position: -164px -80px;}
+.approval .k-grouping-row td 										{background-color:#b1c9e3;border-bottom:2px solid #273A60 !important;line-height:0;}
+.approval .k-reset .k-i-collapse 									{ background-position: 4px -144px;transform: rotate(34deg);}
+.approval .k-reset .k-i-expand 									{ background-position: 0 -142px;}
+.approval .k-pager-numbers										{margin-left:-25px;}
+.approval .k-pager-numbers li span.k-link 							{height: 18px;
+      line-height: 15px !important;
+    width: 60px !important;margin-left: -5px !important; }
+.approval .k-pager-wrap a:nth-child(2){margin-left:-2px !important;}
+.approval .k-pager-wrap .k-pager-last{margin-left:-2px !important;}
+.approval .k-pager-wrap 											{background-color:#F2F2F2;border-color: #B3B3B3;border-radius: 0 0 5px 5px;padding:5px 5px;line-height:0; border-width: 1px 0;}
+.approval  .k-pager-numbers .k-link,
+	.approval  .k-pager-numbers .k-link:hover
+				{border-radius: 0;border:1px solid #b3b3b3 !important;  margin: 0 !important; background-color: #FFFFFF !important;}      
+.approval .k-pager-numbers .k-state-selected						{background-color:#999999;color:#fff; margin: -1px;}    
+ .approval .k-pager-wrap > a.k-link 									{border-radius: 0;border:1px solid #b3b3b3 !important;background-color: #FFFFFF;min-width: 1.429em;height: 1.429em;line-height: 1.3;}
+
+
+.approval .k-pager-refresh  										{display:none;}
+.approval .k-icon.k-filter {
+    
+    background: url('../Images/Admin/filter.png')no-repeat;
+    opacity: 1;
+}
+.approval .k-grid tr:nth-child(odd) td .info a			{background:url('../images/Invoices/info1.png') no-repeat;width: 15px;cursor:pointer;height:35px;float:left;margin-left:-7px;}
+.approval  .k-grid tr:nth-child(even) td .info a				{background:url('../images/Invoices/info2.png') no-repeat;width: 16px;cursor:pointer;height:30px;float:left;margin-left:-7px;}
+
+.approval_icons  .k-grid tr:nth-child(even)  						{background-color: #F2F2F2;}
+
+.approval .icons-approval										{float:left;  margin-left: -21px;}
+.approval .Deviation-type										{margin-left: 4px; margin-top: 4px;}
+.matchesApproval {
+margin-top:6px !important;}
+#export .modal-backdrop {z-index:-1;}
+#approval .modal-backdrop {z-index:-1;}
+
+
+/** Approval Page Style Ended Here **/
+
+/** Multi View Page Style Started Here **/
+
+.multiSelect {margin-top:9px;font-size:16px;/*font-size:16pt;*/}
+.multiClearFilter {margin-left:89px;}
+.multiClearFilter img {margin-top:-11px;}
+.multiViewGrid .k-grid-content {height:89px !important;}
+.rightmultiSelect {margin-top:-20px;}
+.multigoodsreceipt .multiSelect {margin-top:31px;font-size:16px;/*font-size:16pt*/}
+.multigoodsreceipt .rightmultiSelect {margin-top:6px;}
+.multigoodsreceipt .goodsClearFilter img {margin-top:11px;}
+.multigoodsreceipt .goodsClearFilter {margin-left:17px;}
+.multiViewInvoice {margin-left:40px;}
+
+
+/** Multi View Page Style Ended Here **/
+
+/** Admin Page Style Started Here **/
+
+#tabs														{margin: 0;overflow: hidden;padding: 0;zoom: 1;position:relative;top:2px;z-index: 1;}
+#tabs li 														{display: block;list-style: none;margin: 0;	padding: 0;float: left;}
+#tabs li a 													{display: block;padding: 2px 31px;border: 1px solid #B3B3B3;text-align: center;text-decoration: none;text-transform: uppercase;  background-color: #DDDDDD;color:#666;}
+.tab-section 												{background:#fff;padding: 10px;border: 1px solid #B3B3B3;}
+#tabs li a.current 											{background: #fff;color: #666;border-bottom:none;}
+.updateRates 												{ background: url("../images/updateRate.png") no-repeat scroll 0 0 / 15% auto rgba(0, 0, 0, 0);width:19px;background-position:7% center;}
+.updateRates span											{ margin-left: 23px;color:#666;margin-right: 2px;}
+.search														{ width: 300px;vertical-align: middle;white-space: nowrap;position: relative;}
+.search input#search											{height: 30px; border: 1px solid #B3B3B3; font-size: 12px;   width: 211px; float: left; color: #666;margin-left: -15px; -webkit-border-radius: 5px;-moz-border-radius: 5px; border-radius: 5px; color: #666;}
+.search .icon												{color: #666666;font-size: 16px;position: absolute;right: 37%;top: 6px;cursor:pointer;z-index: 1;}
+.serachList													{ margin-left: -15px;  margin-top: 20px;}
+.serachList	ul												{ border: 1px solid #B3B3B3;max-width: 210px;overflow-y: scroll;height: 426px;cursor:pointer;}
+.serachList	ul li												{list-style:none;  margin-left: -40px; padding: 3px 0;}
+.serachList	ul li:hover,  .serachList ul li.highlight				{background-color:#273A60;color:#fff;}
+.serachList	ul li:hover a, .serachList ul li.highlight a			{background-color:#273A60;color:#fff;}
+.serachList	ul li a											{text-decoration:underline;margin-left: 15px;color:#273A60;}
+.icons_approver ul											{ margin-left: -51px;}
+.approval  #gridApprovers									{border-color:#b3b3b3;border-radius:5px;}
+.approval  #gridSuppliers									{border-color:#b3b3b3;border-radius:5px;}
+.approval  #gridSuppliers									{border-color:#b3b3b3;border-radius:5px;}
+.approval  #gridSuppliers td:first-child {  padding: 6px 7px;}
+.approval  #gridApprovers td:first-child {  padding: 6px 4px;}
+.approval  #gridCurrencys td:first-child {  padding: 6px 4px;}
+
+
+.adminPallets												{margin-top:2px;}
+.groupname input.text											{height: 30px; border: 1px solid #B3B3B3; font-size: 12px; float: left; color: #666;width: 100%; -webkit-border-radius: 5px;-moz-border-radius: 5px; border-radius: 5px; color: #666;}
+.newUserSearch												{width: 280px;vertical-align: middle;white-space: nowrap;position: relative;margin:0 auto;}
+.newUserSearch  input#search									{width: 100%;height: 30px; border: 1px solid #B3B3B3; font-size: 14px;/* font-size: 14pt;*/ float: left; color: #666;-webkit-border-radius: 5px;-moz-border-radius: 5px; border-radius: 5px; color: #666;}
+.newUserSearch .icon											{color: #666666;font-size: 16px;position: absolute;right: 3%;top: 6px;cursor:pointer;z-index: 1;}
+.addUser													{margin-top:20px;}
+.addUser p													{color:#666;font-weight:bold;}
+.leftuser													{float:left;}
+.rightuser													{float:right;}
+.availableUser												{ border: 1px solid #999999; height: 168px; overflow-y: scroll; width: 222px;}
+.availableUser ul 											{margin-left:-50px;margin-top: 4px;}
+.availableUser ul li											{list-style:none; margin-bottom: 3px;}
+.availableUser ul li a											{text-decoration:none;color:#666;margin-left:19px;cursor:pointer;}
+.availableUser	ul li:hover,  .availableUser ul li.highlight		{background-color:#273A60;color:#fff;cursor:pointer;}
+.availableUser	ul li:hover a, .availableUser ul li.highlight a	{background-color:#273A60;color:#fff;cursor:pointer;}
+.newAddUser													{border: 1px solid #999999; height: 168px; overflow-y: scroll; width: 222px;}
+.newAddUser ul 												{margin-left:-38px;margin-top: 4px;}
+.newAddUser ul li												{list-style:none; background-color: #F2F2F2;border: 1px solid #B3B3B3; margin-bottom: 3px;}
+.newAddUser ul li a												{text-decoration:none;color:#666;margin-left:5px;cursor:pointer;}
+.remove-icon												{margin-left:5px;font-size: 9px;}
+.approval													{margin:0 auto;}	
+.adminTab .right												{margin-right: 22px;}	
+.remove														{background:none !important;border:none !important;font-style: italic;}
+.approval .k-grid .k-grid-add {position:absolute;margin-top:-42px;margin-left:107px;background:url('../images/Admin/add.png')no-repeat;border:none;  text-indent: -9999px;  width: 27px;
+  height: 27px;box-shadow:none;}
+.approval .k-button:active {
+box-shadow:none;}
+    .approval .k-grid .k-grid-add:hover {
+    background:url('../images/Admin/add.png')no-repeat;border:none;}
+.approval .k-header{border:none;}
+.approval #gridSuppliers .k-grid-content {height:225px;}
+.approval #gridApprovers .k-grid-content {height:225px;}
+.approval #gridCurrencys .k-grid-add {display:none !important;}
+#gridCurrencys{width:50%;}
+.approval #gridCurrencys .k-grid-content {height:225px;}
+.adminPallets .delete {padding:0;}
+#myModalApprover .modal-backdrop {z-index:-1;}
+#new_user .modal-backdrop {z-index:-1;}
+#editGroup .modal-backdrop {z-index:-1;}
+#delete .modal-backdrop {z-index:-1;}
+#createNewGroup .modal-backdrop {z-index:-1;}
+
+/** Admin Page Style Ended Here **/
+
+ /** Modal Window Style Started Here **/
+
+.fileInput 												{position:absolute;left:-72px;top:39px;}
+.testfile 														{height: 28px;text-decoration: none;background-color: #fff;border:1px solid #999;border-radius:3px;width: 78%;overflow:hidden;text-overflow:ellipsis;color:#999;text-indent:5px;}
+.modal-dialog 													{width: 486px;margin: 105px auto;}
+.import-file-upload												{padding: 12px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;position:relative;overflow:hidden;}
+.import-file-upload p 											{font-size:12px;color:#666;}
+#myModalLabel 													{padding-top:12px;}
+.modal-footer 													{border-top:none;}
+.modal-header													{border-bottom:none;}
+button.close														{background-color:#666;height: 12px;width: 12px;border-radius:3px;}
+.close															{opacity:1;color:#fff;text-shadow:none;font-weight:normal;font-size:17px; line-height: 0.8;}
+.close:hover													{color:#fff;opacity:1;}
+.browse 															{ padding: 1px 12px;font-size:12px;}
+.cancel 															{background-color:#ddd;border:1px solid #999;font-size:16px;border-radius: 5px;padding: 6px 24px;line-height: 0.429; height: 32px;}
+.importBtn 														{height:32px;line-height: 0.429;border-radius: 5px;}
+input[type=radio] 												{display:none;}
+.export-file-upload 												{border-bottom: 1px solid #333333; border-top: 1px solid #333333; padding: 12px 0;}
+.export-file-upload label 											{display: inline-block;cursor: pointer;font-size: 12px; margin-right: 6px;position: relative;}
+.export-file-upload label:before 									{content: "";display: inline-block;width: 10px;height: 10px; margin-top: 0px;margin-right:10px; margin-left: 21px;vertical-align:middle;background-color: #fff;border:1px solid #000;color: #f3f3f3;text-align: center;border-radius:8px;}
+.export-file-upload input[type=radio]:checked + label:before 		{content: "\2022";color: #000;font-size: 12px;text-align: center;line-height: 8px;}
+
+/**Modal Window Style Ended Here**/
+
+/* navjyot */
+.icons ul li.infoIcons{display:inline-block;width:28px;float:left;margin:0;padding:0;}
+
+.invoice .k-grid tr:nth-child(even) td .info a, .invoice .k-grid tr:nth-child(odd) td .info a{width:32px;height:35px;background-position:15px 0px;}
+.invoice .k-grid tr:nth-child(even) td .info a:hover, .invoice .k-grid tr:nth-child(odd) td .info a:hover{background-position:0px 0px;background-color:#273A60;}
+.invoice .k-grid tr:nth-child(even) td .info a:hover{background-color:#3a598c;}

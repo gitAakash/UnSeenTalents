@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.125, 23.5" name="Unseentalentdb">
+  <DataContextMoniker Name="/UnseentalentdbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6cccd3a1-fc54-4bd1-8b72-96e3432d6b08" absoluteBounds="3.5, 15.125, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd80a95b-4dd8-4570-a0d9-f1efe6ed8236" absoluteBounds="3.515, 15.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b024499d-f777-4663-90a6-0071e18a7a60" absoluteBounds="3.5, 5.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Vote" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f281715-8b9d-4472-90fa-d1fffab5af26" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6bc1c12f-e332-4f67-bf6a-30bb419df7f7" absoluteBounds="3.5, 11.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5acb9ee8-b129-4948-9b7b-3e5f44a36fba" absoluteBounds="3.515, 12.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad662e38-8ed4-4b3b-83b3-7c1075e1e6f1" absoluteBounds="6.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/ContactInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae43c6be-a846-484e-b561-e2123cb0e019" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="567018d9-6efe-47a2-9a5a-8b1ea0ff9470" absoluteBounds="3.5, 20.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a01d72be-b4d0-4c2b-9841-5be7327e6c96" absoluteBounds="3.515, 20.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d872d98a-4ce7-4676-a8fc-55aaa9a2bbc4" absoluteBounds="6.5, 5.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/PaymentTransaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b92115a3-f2ab-47a7-af78-6398b96fc9e2" absoluteBounds="6.515, 6.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="721d3e75-d048-403c-90b6-0f2058f949b8" absoluteBounds="0.75, 6.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="100b3aa2-54d0-4cc6-b86f-9234d39ff495" absoluteBounds="0.765, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ceb10a6-f98c-4428-8b96-1cc1008d588e" absoluteBounds="2.125, 2.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Token" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc7cbdbd-898d-488b-ba80-b653c91a5f34" absoluteBounds="2.14, 3.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef2bfad7-8963-4e6f-abcb-95962629554b" absoluteBounds="3.5, 9.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/UserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3d4b73d-31a4-4109-b690-4d26c54f5045" absoluteBounds="3.515, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f202adf-0839-4a0c-940d-54d586130f7f" absoluteBounds="0.75, 8.25, 2, 3.1170068359374987">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61210d62-f2a5-4de9-bcea-3e3991432988" absoluteBounds="0.765, 8.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.96875 : 4.7131982421875); (2.96875 : 7.80934645833333); (6.5 : 7.80934645833333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/Token/Token_PaymentTransaction" />
+      <nodes>
+        <classShapeMoniker Id="1ceb10a6-f98c-4428-8b96-1cc1008d588e" />
+        <classShapeMoniker Id="d872d98a-4ce7-4676-a8fc-55aaa9a2bbc4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.44399251302083); (3.125 : 7.81899251302083); (3.125 : 9.81814697265625); (3.5 : 9.81814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/Role/Role_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="721d3e75-d048-403c-90b6-0f2058f949b8" />
+        <classShapeMoniker Id="ef2bfad7-8963-4e6f-abcb-95962629554b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.71769230769231 : 8.25); (3.15982443490112 : 7.80786787279119 : JumpStart); (3.27767556509888 : 7.69001674259343 : JumpEnd); (3.3125 : 7.65519230769231); (3.3125 : 7.83339680989583); (3.5 : 7.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_Vote" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="b024499d-f777-4663-90a6-0071e18a7a60" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 11.3670068359375); (1.75 : 12.7027498372396); (2.19791916666667 : 12.7027498372396 : JumpStart); (2.36458583333333 : 12.7027498372396 : JumpEnd); (3.5 : 12.7027498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_Comment" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="6bc1c12f-e332-4f67-bf6a-30bb419df7f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 11.3670068359375); (2.2812525 : 21.8662019856771); (3.5 : 21.8662019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_Event" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="567018d9-6efe-47a2-9a5a-8b1ea0ff9470" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.34692207692308); (2.9375 : 8.15942207692308); (2.9375 : 8.34780110677083); (3.04166666666667 : 8.34780110677083 : JumpStart); (3.30208333333333 : 8.34780110677083 : JumpEnd); (6.125 : 8.34780110677083); (6.5 : 7.97280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_PaymentTransaction" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="d872d98a-4ce7-4676-a8fc-55aaa9a2bbc4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.40907348632813); (3.04166666666667 : 9.40907348632813 : JumpStart); (3.30208333333333 : 9.40907348632813 : JumpEnd); (3.5 : 9.40907348632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="ef2bfad7-8963-4e6f-abcb-95962629554b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c71579e3-4b55-42d7-9144-6b533a9a43b3" absoluteBounds="8.875, 13.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Managetoken" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce75dab2-99f3-4d78-91fe-69cbeb1d921f" absoluteBounds="8.89, 13.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.21875 : 4.7131982421875); (3.21875 : 14.4527498372396); (8.875 : 14.4527498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/Token/Token_Managetoken" />
+      <nodes>
+        <classShapeMoniker Id="1ceb10a6-f98c-4428-8b96-1cc1008d588e" />
+        <classShapeMoniker Id="c71579e3-4b55-42d7-9144-6b533a9a43b3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 11.3670068359375); (1.2187475 : 14.1166222558594); (8.875 : 14.1166222558594)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_Managetoken" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="c71579e3-4b55-42d7-9144-6b533a9a43b3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="421f7af6-2abf-43da-9039-f35e9ff11939" absoluteBounds="7.625, 17.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/UnseentalentdbDataContext/Video" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a01c82b6-ad97-4e38-b628-5edeb45185ee" absoluteBounds="7.64, 17.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.625 : 17.125); (7.25 : 16.75); (5.875 : 16.75); (5.875 : 8.02089680989583); (5.5 : 7.64589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/Video/Video_Vote" />
+      <nodes>
+        <classShapeMoniker Id="421f7af6-2abf-43da-9039-f35e9ff11939" />
+        <classShapeMoniker Id="b024499d-f777-4663-90a6-0071e18a7a60" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 16.3189925130208); (4.5 : 18.6186052018229); (7.625 : 18.6186052018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/Category/Category_Video" />
+      <nodes>
+        <classShapeMoniker Id="6cccd3a1-fc54-4bd1-8b72-96e3432d6b08" />
+        <classShapeMoniker Id="421f7af6-2abf-43da-9039-f35e9ff11939" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 21.8662019856771); (8.625 : 21.8662019856771); (8.625 : 20.0497054036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/Event/Event_Video" />
+      <nodes>
+        <classShapeMoniker Id="567018d9-6efe-47a2-9a5a-8b1ea0ff9470" />
+        <classShapeMoniker Id="421f7af6-2abf-43da-9039-f35e9ff11939" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.54687875 : 11.3670068359375); (2.54687875 : 17.8718026009115); (7.625 : 17.8718026009115)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/UnseentalentdbDataContext/User/User_Video" />
+      <nodes>
+        <classShapeMoniker Id="0f202adf-0839-4a0c-940d-54d586130f7f" />
+        <classShapeMoniker Id="421f7af6-2abf-43da-9039-f35e9ff11939" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

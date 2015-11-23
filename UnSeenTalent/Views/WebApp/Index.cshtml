@@ -1,0 +1,392 @@
+﻿@using UnseentalentsApp.Models.Repository
+@{
+    Layout = null;
+    var cUser = new CurrentUser();
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Talent</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+        <script src="~/Scripts/DefaultJs/jquery-1.11.2.min.js"></script>
+        <script src="~/Scripts/Angular/angular.js"></script>
+        <script src="~/Scripts/DefaultJs/bootstrap.js"></script>
+        <script src="~/Scripts/Angular/ui-bootstrap-tpls-0.10.0.js"></script>
+        <script src="http://kendo.cdn.telerik.com/2015.2.624/js/kendo.all.min.js"></script>
+        <script src="~/Scripts/Angular/ngTable/ng-table.js"></script>
+        <script src="~/Scripts/Angular/ngFramework.js"></script>
+        <script src="~/Scripts/WebScripts/WebApp/commonLayout.js"></script>
+
+        <link href='http://fonts.googleapis.com/css?family=Candal|Raleway:500,600,400' rel='stylesheet' type='text/css'>
+        <script src="~/Assets/Web/js/move-top.js"></script>
+        <script src="~/Assets/Web/js/easing.js"></script>
+
+        <!--/script-->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event) {
+                    event.preventDefault();
+                    $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= 130) {
+                    $('.header-top').addClass('fixed-header');
+                } else {
+                    $('.header-top').removeClass('fixed-header');
+                }
+            });
+        </script>
+        <style type="text/css">
+            .videoCss {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+
+    </head>
+    <body ng-app="myApp">
+        <!--start-home-->
+        <ul class="side_nav">
+            <li><a class="active scroll" href="#home"></a></li>
+            <li><a class="scroll" href="#about"></a></li>
+            <li><a class="scroll" href="#experience"></a></li>
+
+            <li><a class="scroll" href="#port"></a></li>
+            <li><a class="scroll" href="#footer"></a></li>
+        </ul>
+        <div class="banner" id="home">
+            <div class="header-top">
+                <div class="container">
+                    <!--top-nav-->
+                    <span class="menu"> </span>
+                    <div class="top-menu">
+                        <div class="col-lg-3 col-md-3 logo-o"><img src="@Url.Content("~/images/logo.png")" /></div>
+                        <div class="col-lg-9 col-md-9 menu-o">
+                            <nav>
+                                <ul class="cl-effect-16">
+                                    <li><a class="active" href="@Url.Action("Index", "Webapp")" data-hover="Home">Home</a></li>
+                                    <li><a class="" href="@Url.Action("HowToApply", "Webapp")" data-hover="How To apply">Enter Contest</a></li>
+                                    @*<li><a class="scroll" href="#" data-hover="Contest Registration">Contest Registration</a></li>
+                                    <li><a class="scroll" href="#" data-hover="Register to vote here">Register to vote here</a></li>*@
+                                    <li><a class="" href="@Url.Action("UpcomingEvents", "Webapp")">Events</a></li>
+                                    <li><a class="" href="@Url.Action("ContactUs", "Webapp")" data-hover="Contact">Contact</a></li>
+                                    <li><a class="" href="@Url.Action("AboutUs", "Webapp")" data-hover="Contact">AboutUs</a></li>
+                                    @if (cUser.userid != 0)
+                                    {
+                                        <li><a class="" href="@Url.Action("UploadTalent", "Webapp")" data-hover="Upload Talent">Upload Talent</a></li>
+                                        <li class="pull-right">
+                                            <a href="javascript:void(0)">
+                                                <i class="fa fa-user fa-fw"></i> @cUser.FirstName <i class="arrow glyphicon glyphicon-chevron-right"></i>
+                                            </a>
+                                            <a id="logout" href="@Url.Action("Logout", "Webapp")"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="dropdown pull-right">
+                                            <a href="@Url.Action("Login", "Webapp")"><span>Login</span></a>
+                                        </li>
+                                    }
+                                    <div class="clearfix"></div>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                  
+                    <!-- script-for-menu -->
+                    <script>
+                        $("span.menu").click(function() {
+                            $(".top-menu ul").slideToggle("slow", function() {
+                            });
+                        });
+                    </script>
+                    <!-- script-for-menu -->
+
+                    <div class="clearfix"></div>
+                    <!-- script-for-menu -->
+                </div>
+            </div>
+            <!--banner-->
+            <div class="container" ng-controller="searchCtrl">
+                <!-- script-for-menu -->
+                <div class="banner-info">
+                    <div class="col-lg-6 col-xs-offset-3">
+                        <div class="search-section">
+                            @if (cUser.userid == 0)
+                            {
+                                <a href="@Url.Action("Registration", "Webapp")" class="search-sectionanker">Register Here</a>
+                            }
+                            else
+                            {
+                                <span class="searchBox" style="float: left; width: 76%">
+                                    <input type="text" id="txtState" ng-model="searchText" style="width: 91%" ng-keypress="eventDeatil=null"
+                                           typeahead-on-select='selectSeach($item)' typeahead="event.eventName for event in eventList| filter:{eventName:$viewValue}"
+                                           typeahead-template-url="~/HtmlTemplates/SearchTemplate.html" placeholder="Enter your keyword here..." autocomplete="off" />
+                                    <div class="clear"></div>
+                                </span>
+                                <input name="" type="button" value="Search" ng-click="goSearch()"/>
+                            }
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="logo">
+                        <a href="index.html"><h1>Have a Video Ready to Upload? Lets get going now!!! </h1></a>
+                    </div>
+                    <p>As an Associate Member You will upload one Video and Have the Right to vote.</p>
+                    <div class="scroll-down">
+                        <h4>SCROLL DOWN</h4>
+                        <a class="downarrow scroll" href="#about"><span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--about-->
+        <div class="about" id="about">
+            <div class="container">
+                <h3 class="tittle">But There's a Catch</h3>
+                <div class="video-outer">
+                    <div class="col-md-5 ab-grid pic video-h">
+                        <video controls="controls" class="videoCss" style="width: 78%">
+                            <source src="http://unseent.s3.amazonaws.com/vids/utnews.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="col-md-7 ab-grid text">
+                        <h4>Each Video is Kept Anonymous Until the Winner is Announced!</h4>
+                        <p>It Doesn't Matter Whether you are 16 or 60, Everyone Has An Equal Shot at Winning the Money!</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!--//about-->
+        <!--experience-starts-->
+        <div class="experience" id="experience">
+            <div class="container">
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="tittle four">Do you think you've got what it takes?</h3>
+                    <div class="experience-main">
+                        <span class="devide-line"></span>
+                        <div class="experience-left">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                            <h4>Do you have a great voice</h4>
+                            <p>Post your video and let the World be the judge!</p>
+                        </div>
+
+                        <div class="experience-left-snd">
+                            <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                            <h4>Can You Shred On a Guitar</h4>
+                            <p>Post your video and let the audience be the judge!</p>
+                        </div>
+                        <div class="experience-left-trd">
+                            <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+                            <h4>Maybe You're In a Great Band</h4>
+                            <p>If you're selling out local gigs, lets get your name out there!</p>
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="tittle four">The Stage is being set, Are you going to be on it?</h3>
+                    <div class="graybox">
+                        <h2>Unlike some other talent searches  like</h2>
+                        <ul>
+                            <li>America’s Got Talent</li>
+                            <li>American Idol</li>
+                            <li>The Voice</li>
+                            <li>Rising Star</li>
+                            <li>Britain’s got talent.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--experience-end-->
+        <div class="gallery" id="port">
+            <div class="container">
+                <h3 class="tittle port">Video gallery</h3>
+                <div class="gallery-bottom">
+                    <div class="col-lg-6 col-sm-12 catgry">
+                        <h2><a href="#">Vocal</a></h2>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 catgry">
+                        <h2><a href="#">Instrument</a></h2>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                        <div class="col-md-6 col-sm-12 bottom-gallery">
+                            <object width="425" height="350">
+                                <param name="movie" value="http://www.youtube.com/v/AyPzM5WK8ys" />
+                                <param name="wmode" value="transparent" />
+                                <embed src="http://www.youtube.com/v/AyPzM5WK8ys"
+                                       type="application/x-shockwave-flash"
+                                       wmode="transparent" width="100%" height="260" />
+                            </object>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="newsletter" ng-controller="commonLayoutCtrl">
+            <div class="container">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <p>
+                        Enter Your Email for Updates on Each Event!
+                    </p>
+                </div>
+                <form>
+                    <div class="col-lg-4 col-md-3 col-sm-12">
+                        <input type="text" id="subsemail" class="" placeholder="Email address" ng-model="email" ng-enter/>
+                        <input name="" type="button" class="btn" value="Submit" ng-enter ng-click="subscribeNewsLetter()"/>
+                    </div>
+                </form>
+                <div class="col-lg-5 col-md-3 col-sm-12 ship">
+                    <p>Signup to vote</p>
+                    <hr>
+                    <p>  Secured Checkout</p>
+                </div>
+            </div>
+        </div>
+        <div class="footernew" id="footer">
+            <div class="container">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <ul>
+                        <span>Unseen talent</span>
+                        <li><a class="active" href="@Url.Action("Index", "Webapp")" data-hover="Home">Home</a></li>
+                        <li><a class="" href="@Url.Action("HowToApply", "Webapp")" data-hover="How To apply">Enter Contest</a></li>
+
+                        <li><a class="" href="@Url.Action("ContactUs", "Webapp")" data-hover="Contact">Contact</a></li>
+                        <li><a class="" href="@Url.Action("AboutUs", "Webapp")" data-hover="Contact">AboutUs</a></li>
+                    </ul>
+                </div>
+                @*<div class="col-lg-3 col-md-3 col-sm-12">
+                    <ul>
+                        <span>Other links</span>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">How To apply</a></li>
+
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>*@
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <ul>
+                        <span>About Us</span>
+
+                    </ul>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <ul>
+                        <span>Follow us on</span>
+                        <li>
+                            <a href="#">
+                                <img src="@Url.Content("~/images/fb.png")" />
+                            </a> 
+                            <a href="#">
+                                <img src="@Url.Content("~/images/tw.png")" />
+                            </a>
+                            <a href="#">
+                                <img src="@Url.Content("~/images/g.png")" />
+                            </a> 
+                            <a href="#">
+                                <img src="@Url.Content("~/images/pin.png")" />
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="copyright">
+
+            <div class="container">
+                <div class="col-lg-6 col-sm-12 text-left"><a href="#">Privacy Policy</a>&nbsp;&nbsp;  |&nbsp;&nbsp; <a href="#"> Terms & Conditions</a></div>
+                <div class="col-lg-6 col-sm-12 text-right">Copyright 2015 All Rights Reserved</div>
+            </div>
+        </div>
+        <!--start-smoth-scrolling-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+
+                $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+        </script>
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+    </body>
+</html>
